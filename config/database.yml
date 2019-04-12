@@ -24,3 +24,5 @@ production:
   <<: *default
   adapter: postgresql
   database: widget_api_production
+  username: widget_api
+  password: widget_api
