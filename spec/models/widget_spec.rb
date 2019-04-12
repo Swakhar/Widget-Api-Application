@@ -11,4 +11,21 @@ RSpec.describe Widget, type: :model do
   it { is_expected.to validate_inclusion_of(:kind).in_array(%w(visible hidden)) }
 
   it { is_expected.to belong_to :user }
+
+  describe '.visible' do
+    context 'for visible widgets' do
+      it 'returns array of visible widgets' do
+        expect(described_class.visible).to eq [widget]
+      end
+    end
+
+    context 'for hidden widgets' do
+      before do
+        widget.update kind: 'hidden'
+      end
+      it 'returns empty array' do
+        expect(described_class.visible).to eq []
+      end
+    end
+  end
 end

@@ -90,22 +90,45 @@ module API
             end
 
           desc 'Reset Password.'
-          params do
-            requires :user, type: Hash do
-              requires :email,
-                       type: String,
-                       allow_blank: false
+            params do
+              requires :user, type: Hash do
+                requires :email,
+                         type: String,
+                         allow_blank: false
+              end
             end
-          end
 
-          post '/reset_password' do
-            user = User.find_by(email: params[:user][:email])
-            return unless user
+            post '/reset_password' do
+              user = User.find_by(email: params[:user][:email])
+              return unless user
 
-            new_password = Devise.friendly_token.first(6)
-            ResetPasswordMailer.reset_password(params[:user][:email], new_password).deliver_now
-            user.update({password: new_password})
-          end
+              new_password = Devise.friendly_token.first(7)
+              ResetPasswordMailer.reset_password(params[:user][:email], new_password).deliver_now
+              user.update({password: new_password})
+            end
+
+          desc 'Get visible widget of current user'
+            params do
+              optional :term, type: String
+            end
+            get '/me/widgets' do
+              doorkeeper_authorize!
+              widgets = current_user.widgets.visible.where("name LIKE ?", "%#{params[:term]}%")
+              present widgets, with: Entities::Widget
+            end
+
+          desc 'Get visible widget of another user'
+            params do
+              optional :term, type: String
+            end
+            route_param :id do
+              get '/widgets' do
+                doorkeeper_authorize!
+                user = User.find(params[:id])
+                widgets = user.widgets.visible.where("name LIKE ?", "%#{params[:term]}%")
+                present widgets, with: Entities::Widget
+              end
+            end
         end
       end
     end
