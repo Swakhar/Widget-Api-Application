@@ -1,24 +1,18 @@
-# README
+# Widget Api Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Set up for developmenet
 
-Things you may want to cover:
+* bundle install
 
-* Ruby version
+* rake db:create
 
-* System dependencies
+* rake db:migrate
 
-* Configuration
+## For Creating Client ID and Client
 
-* Database creation
+* Doorkeeper::Application.create! name: 'Widget API', redirect_uri: 'https://www.showoff.ie/'
 
-* Database initialization
+## Client ID and Client for Production Environement
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Client ID: cb00c3081005a78935d641589bec36e51221fedbb56be8dd458151ffe6c15777
+* Client Secret: 0f28a7c62cc4179d1d7581f5f3a82c8c45796656d7c851965ef5ce559f7fee87
