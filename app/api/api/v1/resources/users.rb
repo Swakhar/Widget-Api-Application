@@ -25,7 +25,7 @@ module API
             route_param :id do
               get do
                 doorkeeper_authorize!
-                user = User.find_by(id: params[:id])
+                user = User.find(params[:id])
                 present user, with: Entities::User
               end
             end

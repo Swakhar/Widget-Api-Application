@@ -14,7 +14,6 @@ module API
               optional :term, type: String
             end
             get :visible do
-              doorkeeper_authorize!
               widgets = Widget.visible.where("name LIKE ?", "%#{params[:term]}%")
               present widgets, with: Entities::Widget
             end
@@ -55,6 +54,7 @@ module API
               put do
                 doorkeeper_authorize!
                 widget = current_user.widgets.find_by(id: params[:id])
+                authorize! :update, widget
                 widget.update(
                     {
                         name: params[:widget][:name],
@@ -71,6 +71,7 @@ module API
             delete ':id' do
               doorkeeper_authorize!
               widget = current_user.widgets.find_by(id: params[:id])
+              authorize! :destroy, widget
               widget.destroy if widget
             end
         end

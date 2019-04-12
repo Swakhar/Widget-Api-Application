@@ -15,16 +15,19 @@ gem 'coffee-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
+gem 'cancancan', '~> 2.0'
 
 gem 'grape'
 gem 'grape-entity'
 gem 'grape_on_rails_routes'
 gem 'doorkeeper'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :development do

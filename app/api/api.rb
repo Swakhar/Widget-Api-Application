@@ -34,7 +34,21 @@ module API
         error_description = 'Invalid Credential'
         error!({ error: error_description, status: 412 }, 412)
       end
+
+      def current_ability
+        @current_ability ||= ::Ability.new(current_user)
+      end
+
+      def authorize!(*args)
+        current_ability.authorize!(*args)
+      end
     end
+
+    rescue_from ::CanCan::AccessDenied do
+      error!('403 Forbidden', 403)
+    end
+
+    include API::ExceptionHandling
 
     mount API::V1::Resources::Base
 
