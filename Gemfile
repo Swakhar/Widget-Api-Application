@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -37,6 +38,11 @@ group :development do
   gem 'spring-watcher-listen'
   gem 'pry'
   gem 'letter_opener'
+end
+
+group :test do
+  gem 'rspec_junit_formatter'
+  gem 'shoulda-matchers', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

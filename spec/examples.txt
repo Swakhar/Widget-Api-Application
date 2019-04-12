@@ -1,0 +1,30 @@
+example_id                                          | status | run_time        |
+--------------------------------------------------- | ------ | --------------- |
+./spec/api/api_spec.rb[1:1]                         | passed | 0.2202 seconds  |
+./spec/mailers/reset_password_mailer_spec.rb[1:1:1] | passed | 0.16424 seconds |
+./spec/mailers/reset_password_mailer_spec.rb[1:1:2] | passed | 0.01122 seconds |
+./spec/mailers/reset_password_mailer_spec.rb[1:1:3] | passed | 0.00742 seconds |
+./spec/mailers/reset_password_mailer_spec.rb[1:1:4] | passed | 0.00699 seconds |
+./spec/models/ability_spec.rb[1:1:1]                | passed | 0.01628 seconds |
+./spec/models/ability_spec.rb[1:1:2]                | passed | 0.01641 seconds |
+./spec/models/ability_spec.rb[1:1:3]                | passed | 0.01678 seconds |
+./spec/models/ability_spec.rb[1:1:4]                | passed | 0.02704 seconds |
+./spec/models/ability_spec.rb[1:1:5]                | passed | 0.01657 seconds |
+./spec/models/ability_spec.rb[1:1:6]                | passed | 0.01623 seconds |
+./spec/models/ability_spec.rb[1:2:1]                | passed | 0.01671 seconds |
+./spec/models/ability_spec.rb[1:2:2]                | passed | 0.01647 seconds |
+./spec/models/ability_spec.rb[1:2:3]                | passed | 0.01628 seconds |
+./spec/models/ability_spec.rb[1:2:4]                | passed | 0.01644 seconds |
+./spec/models/ability_spec.rb[1:2:5]                | passed | 0.03323 seconds |
+./spec/models/ability_spec.rb[1:2:6]                | passed | 0.01654 seconds |
+./spec/models/user_spec.rb[1:1]                     | passed | 0.00866 seconds |
+./spec/models/user_spec.rb[1:2]                     | passed | 0.01914 seconds |
+./spec/models/user_spec.rb[1:3]                     | passed | 0.04472 seconds |
+./spec/models/user_spec.rb[1:4:1:1]                 | passed | 0.01128 seconds |
+./spec/models/user_spec.rb[1:4:2:1]                 | passed | 0.00754 seconds |
+./spec/models/widget_spec.rb[1:1]                   | passed | 0.01426 seconds |
+./spec/models/widget_spec.rb[1:2]                   | passed | 0.02007 seconds |
+./spec/models/widget_spec.rb[1:3]                   | passed | 0.01364 seconds |
+./spec/models/widget_spec.rb[1:4]                   | passed | 0.01402 seconds |
+./spec/models/widget_spec.rb[1:5]                   | passed | 0.01682 seconds |
+./spec/models/widget_spec.rb[1:6]                   | passed | 0.014 seconds   |
