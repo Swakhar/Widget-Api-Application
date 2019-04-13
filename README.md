@@ -10,7 +10,7 @@
 
 ## For Creating Client ID and Client
 
-* Doorkeeper::Application.create! name: 'Widget API', redirect_uri: 'https://www.showoff.ie/'
+* Doorkeeper::Application.create! name: 'Widget API', redirect_uri: 'https://www.app.com/'
 
 ## Client ID and Client for Production Environement
 
