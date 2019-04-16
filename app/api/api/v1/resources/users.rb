@@ -42,12 +42,20 @@ module API
               requires :username,
                        type: String,
                        allow_blank: false
+              requires :firstname,
+                       type: String,
+                       allow_blank: false
+              requires :lastname,
+                       type: String,
+                       allow_blank: false
             end
           end
           post do
             User.create! email: params[:user][:email],
                          password: params[:user][:password],
-                         username: params[:user][:username]
+                         username: params[:user][:username],
+                         firstname: params[:user][:firstname],
+                         lastname: params[:user][:lastname]
           end
 
           desc 'Update user.'
@@ -113,7 +121,7 @@ module API
             end
             get '/me/widgets' do
               doorkeeper_authorize!
-              widgets = current_user.widgets.visible.where("name LIKE ?", "%#{params[:term]}%")
+              widgets = current_user.widgets.where("name LIKE ?", "%#{params[:term]}%")
               present widgets, with: Entities::Widget
             end
 
@@ -125,7 +133,11 @@ module API
               get '/widgets' do
                 doorkeeper_authorize!
                 user = User.find(params[:id])
-                widgets = user.widgets.visible.where("name LIKE ?", "%#{params[:term]}%")
+                widgets = if user.email == current_user.email
+                            user.widgets.where("name LIKE ?", "%#{params[:term]}%")
+                          else
+                            user.widgets.visible.where("name LIKE ?", "%#{params[:term]}%")
+                          end
                 present widgets, with: Entities::Widget
               end
             end

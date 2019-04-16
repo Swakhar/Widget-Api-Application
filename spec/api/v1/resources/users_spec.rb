@@ -64,7 +64,9 @@ RSpec.describe API::V1::Resources::Users do
           user: {
             email: 'swakhar1.me@gmail.com',
             password: '123456',
-            username: 'swakhs'
+            username: 'swakhs',
+            firstname: 'Swakhar1',
+            lastname: 'Dey',
           },
           client_id: application.uid,
           client_secret: application.secret

@@ -7,6 +7,8 @@ RSpec.describe API::V1::Entities::User do
   let(:expected_hash) do
     {
       'id' => user.id,
+      'firstname' => 'Swakhar',
+      'lastname' => 'Dey',
       'email' => 'swakhar.me@gmail.com',
       'username' => 'swakhar-dey'
     }

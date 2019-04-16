@@ -10,7 +10,14 @@ RSpec.describe API::V1::Entities::Widget do
         'id' => widget.id,
         'name' => 'Widget 1',
         'description' => 'Widget description',
-        'kind' => 'visible'
+        'kind' => 'visible',
+        'user' => {
+            'id' => user.id,
+            'email' => user.email,
+            'username' => user.username,
+            'firstname' => user.firstname,
+            'lastname' => user.lastname,
+        }
     }
   end
 

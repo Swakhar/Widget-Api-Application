@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let!(:user) { FactoryBot.create :user, email: 'swakhar.me@gmail.com' }
 
+  it { is_expected.to validate_presence_of :firstname }
+  it { is_expected.to validate_presence_of :lastname }
   it { is_expected.to validate_presence_of :username }
   it { is_expected.to validate_uniqueness_of :username }
   it { is_expected.to have_many :widgets }

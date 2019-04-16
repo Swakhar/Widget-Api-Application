@@ -6,6 +6,7 @@ module API
         expose :name
         expose :description
         expose :kind
+        expose :user, using: Entities::User
       end
     end
   end
