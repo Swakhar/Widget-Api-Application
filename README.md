@@ -14,5 +14,9 @@
 
 ## Client ID and Client Secret for Production Environement
 
-* Client ID: cb00c3081005a78935d641589bec36e51221fedbb56be8dd458151ffe6c15777
-* Client Secret: 0f28a7c62cc4179d1d7581f5f3a82c8c45796656d7c851965ef5ce559f7fee87
+* Client ID: 0dc43528615116cca2142d107eaf20f1c4a6fa8e85d9e8b5c575336c2fd411e0
+* Client Secret: 0f10b08f11c17a34e76dc285863e94440cce3182d8e87903608f0603e2d294d8
+
+## Test Environment
+
+* Write `rspec` in the terminal to run all specs.
